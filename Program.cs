@@ -16,7 +16,10 @@ Console.WriteLine($"Il cibo meno preferito è: {PreferiteFoods[PreferiteFoods.Le
 
 int MediaFoods = PreferiteFoods.Length/2;
 
-if (MediaFoods/2 == 0)
+if (PreferiteFoods.Length%2 == 0)
 {
-    Console.WriteLine(PreferiteFoods[MediaFoods - 1]);
+    Console.WriteLine(PreferiteFoods[MediaFoods - 1], PreferiteFoods[MediaFoods +1]);
+} else
+{
+    Console.WriteLine(PreferiteFoods[MediaFoods]);
 }
