@@ -29,12 +29,30 @@ if (PreferiteFoods.Length%2 == 0)
 
 string ciboUtente = "";
 
-
-Console.WriteLine("Qual'è il tuo cibo preferito?");
-ciboUtente = Console.ReadLine();
-
+bool found;
 var rand = new Random();
 int ciboComputer = rand.Next(0, PreferiteFoods.Length);
+
+do
+{
+    found = false;
+    Console.WriteLine("Qual'è il tuo cibo preferito?");
+    ciboUtente = Console.ReadLine();
+
+    for (int i = 0; i < PreferiteFoods.Length; i++)
+    {
+        if (ciboUtente == PreferiteFoods[i])
+        {
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        Console.WriteLine("mi spiace ma il tuo cibo non è in classifica, riprova!");
+    }
+
+} while (!found);
 
 for (int i = 0; i < PreferiteFoods.Length; i++)
 {
