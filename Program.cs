@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string[] PreferiteFoods = { "pizza", "bbq", "lasagne", "tiramisu", "pasta", "fried fish", "arancino" };
+string[] PreferiteFoods = { "pizza", "bbq", "lasagne", "tiramisu", "pasta", "fried fish", "arancino", "wow" };
 
 Console.WriteLine($"Il totale dei miei cibi preferiti è: {PreferiteFoods.Length}");
 
@@ -18,7 +18,8 @@ int MediaFoods = PreferiteFoods.Length/2;
 
 if (PreferiteFoods.Length%2 == 0)
 {
-    Console.WriteLine(PreferiteFoods[MediaFoods - 1], PreferiteFoods[MediaFoods +1]);
+    Console.WriteLine(PreferiteFoods[MediaFoods - 1]);
+    Console.WriteLine(PreferiteFoods[MediaFoods]);
 } else
 {
     Console.WriteLine(PreferiteFoods[MediaFoods]);
