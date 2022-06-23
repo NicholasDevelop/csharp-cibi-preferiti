@@ -38,14 +38,18 @@ int ciboComputer = rand.Next(0, PreferiteFoods.Length);
 
 for (int i = 0; i < PreferiteFoods.Length; i++)
 {
-    if(ciboUtente == PreferiteFoods[i])
+    if(ciboUtente == PreferiteFoods[i] & ciboComputer == i)
+    {
+        PreferiteFoods[i] = $"{PreferiteFoods[i]} <-- Abbiamo gli stessi gusti!";
+    } 
+    else if (ciboUtente == PreferiteFoods[i])
     {
         PreferiteFoods[i] = $"{PreferiteFoods[i]} <-- Il tuo cibo preferito è {ciboUtente}";
-    }
-    if(ciboComputer == i)
+    } 
+    else if (ciboComputer == i)
     {
         PreferiteFoods[i] = $"{PreferiteFoods[i]} <-- Il mio cibo preferito è {PreferiteFoods[i]}";
     }
+
     Console.WriteLine(PreferiteFoods[i]);
-        
 }
