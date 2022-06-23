@@ -2,7 +2,8 @@
 
 string[] PreferiteFoods = { "pizza", "bbq", "lasagne", "tiramisu", "pasta", "fried fish", "arancino", "wow" };
 
-Console.WriteLine($"Il totale dei miei cibi preferiti è: {PreferiteFoods.Length}");
+/*
+ * Console.WriteLine($"Il totale dei miei cibi preferiti è: {PreferiteFoods.Length}");
 
 for (int i = 0; i < PreferiteFoods.Length; i++)
 {
@@ -23,4 +24,28 @@ if (PreferiteFoods.Length%2 == 0)
 } else
 {
     Console.WriteLine(PreferiteFoods[MediaFoods]);
+}
+*/
+
+string ciboUtente = "";
+
+
+Console.WriteLine("Qual'è il tuo cibo preferito?");
+ciboUtente = Console.ReadLine();
+
+var rand = new Random();
+int ciboComputer = rand.Next(0, PreferiteFoods.Length);
+
+for (int i = 0; i < PreferiteFoods.Length; i++)
+{
+    if(ciboUtente == PreferiteFoods[i])
+    {
+        PreferiteFoods[i] = $"{PreferiteFoods[i]} <-- Il tuo cibo preferito è {ciboUtente}";
+    }
+    if(ciboComputer == i)
+    {
+        PreferiteFoods[i] = $"{PreferiteFoods[i]} <-- Il mio cibo preferito è {PreferiteFoods[i]}";
+    }
+    Console.WriteLine(PreferiteFoods[i]);
+        
 }
